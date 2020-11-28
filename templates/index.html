@@ -1,0 +1,238 @@
+<script >
+
+// function main(){
+//     const Http = new XMLHttpRequest();
+//     const url='http://localhost:5000/questions';
+//     Http.open("GET", url);
+//     Http.send();
+    
+//     Http.onreadystatechange = (e) => {
+//       console.log(Http.responseText)
+//     }
+//     return HtmlService.createHtmlOutput('Hii Harsh');
+// }
+
+var delayInMilliseconds = 1000; //1 second
+
+setTimeout(function() {
+  //your code to be executed after 1 second
+//   console.log("Delay");
+  return 0;
+}, delayInMilliseconds);
+
+
+
+
+
+
+
+
+// function httpGet()
+// {
+//     theUrl='http://localhost:5000/questions';
+//     console.log("in function")
+//     var xmlHttp = new XMLHttpRequest();
+//     xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+//     xmlHttp.send( null );
+//     console.log(xmlHttp.responseText);
+//     var x = JSON.parse(xmlHttp.responseText);
+//     for(i in x)
+//     {
+//       console.log(i);
+//     }
+
+//     return xmlHttp.responseText;
+//     return 0;
+// }
+
+
+function push(){ 
+               
+  let result = document.querySelector('.result'); 
+  let push_data = document.querySelector('#push_data'); 
+//   let email = document.querySelector('#email'); 
+  // var timestamp = new Date(year, month, day, hours, minutes, seconds, milliseconds);
+  // console.log(timestamp)
+  // Creating a XHR object 
+  let xhr = new XMLHttpRequest(); 
+  let url = "https://stackapi-app.herokuapp.com/push?data="+push_data.value; 
+  // console.log(url)
+  // open a connection 
+  xhr.open("POST", url, true); 
+
+  // Set the request header i.e. which type of content you are sending 
+  xhr.setRequestHeader("Content-Type", "application/json"); 
+
+  // Create a state change callback 
+  xhr.onreadystatechange = function () { 
+      if (xhr.readyState === 4 && xhr.status === 200) { 
+
+          // Print received data from server 
+          result.innerHTML = this.responseText; 
+
+      } 
+  }; 
+    // console.log(push_data.value)
+  // Converting JSON data to string 
+  var data = JSON.stringify({ "push_data": push_data.value  }); 
+
+  // Sending data with the request 
+  xhr.send(data); 
+  setTimeout(500);
+  window.location.replace("https://stackapi-app.herokuapp.com/");
+}
+
+function pop(){
+    // let xhr = new XMLHttpRequest(); 
+    // let url = "http://localhost:5000/pop";
+    // xhr.open("GET", url, true); 
+    // xhr.send(); 
+
+
+    
+    fetch('https://stackapi-app.herokuapp.com/pop')
+    .then((response) => {
+    return response.json()
+    })
+    .then((data) => {
+    // Work with JSON data here 
+    })
+    .catch((err) => {
+    // Do something for an error here
+    // document.write("ERROR");
+
+    })
+
+
+    setTimeout(500);
+    window.location.replace("https://stackapi-app.herokuapp.com/");
+ 
+}
+
+function filesave(){
+  // let xhr = new XMLHttpRequest(); 
+  // let url = "http://localhost:5000/pop";
+  // xhr.open("GET", url, true); 
+  // xhr.send(); 
+
+
+  
+  fetch('https://stackapi-app.herokuapp.com/filesave')
+  .then((response) => {
+  return response.json()
+  })
+  .then((data) => {
+  // Work with JSON data here 
+  })
+  .catch((err) => {
+  // Do something for an error here
+  // document.write("ERROR");
+
+  })
+
+
+  setTimeout(2000);
+  window.location.replace("https://stackapi-app.herokuapp.com/");
+
+}
+
+function remake(){
+  // let xhr = new XMLHttpRequest(); 
+  // let url = "http://localhost:5000/pop";
+  // xhr.open("GET", url, true); 
+  // xhr.send(); 
+
+
+  
+  fetch('https://stackapi-app.herokuapp.com/remake')
+  .then((response) => {
+  return response.json()
+  })
+  .then((data) => {
+  // Work with JSON data here 
+  })
+  .catch((err) => {
+  // Do something for an error here
+  // document.write("ERROR");
+
+  })
+
+
+  setTimeout(2000);
+  window.location.replace("https://stackapi-app.herokuapp.com/");
+
+}
+
+
+var myvar = '<!DOCTYPE html> '+
+'<html> '+
+'  <head> '+
+'    <title> '+
+'        StackApi'+
+'    </title> '+
+' <style> table, th, td {  border: 1px solid black; border-spacing: 0px; font-size: larger; }</style> </head> '+
+'  '+
+'  <body style="text-align:center;" id="body"> '+
+'    <h1 style="color:green;"> '+
+'      StackApi '+
+'    </h1> '+
+'  '+
+'    <p> '+
+'        '+
+''+
+'        <!-- Making a text input -->'+
+'        <input type="text" id="push_data" placeholder="Push Data"> '+
+'          '+
+'        <!-- Button to send data -->'+
+'        <button onclick="push()">push</button> '+
+'        <button onclick="pop()"> pop </button> <br><br> <button onclick="filesave()">Update DB</button> <button onclick="remake()">Update From DB</button>'+
+''+
+'  '+
+'      <!-- For printing result from server -->'+
+'      <p class="result" style="color:green"></p> '+
+'     <!-- <script src="que.js"> </script> -->'+
+'   </p><br> ';
+    
+
+
+fetch('https://stackapi-app.herokuapp.com/stack')
+  .then((response) => {
+    return response.json()
+  })
+  .then((data) => {
+    // Work with JSON data here
+    // console.log(data)
+    console.log(data)
+    // document.write("Hello World!!");
+    // document.write(data);
+    // document.write(data.que);
+    var size=data['size']-1;
+    // console.log(size)
+    // console.log(size)
+    myvar = myvar + '<h3> size = '+ data['size'] + '</h3> <br> <center><table style="width:70%"> <tr> <th>index</th> <th>data</th> <th>&nbsp;&nbsp;&nbsp;</th> <th>index</th> <th> data </th>  </tr>';
+    for(i in data['data'])
+    {
+        
+        var reverse=size-i;
+        // console.log(reverse);
+        // document.write(" "+i+". ");
+        // document.write(data['data'][i]+"<br>");
+        myvar= myvar + '  <tr>    <td>'+ i +'</td> <td>'+ data['data'][i] +'</td>  <td></td> <td>'+(size-i)+'</td><td>'+ data['data'][size-i]+'</td>   </tr>'
+        // document.write("<br><br>");
+
+
+    }
+        myvar =myvar + '</table></center>  <\/body> \r\n<\/html>';
+        document.write(myvar);
+
+  })
+  .catch((err) => {
+    // Do something for an error here
+    document.write("ERROR");
+
+  })
+
+
+
+</script>
+

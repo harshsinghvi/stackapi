@@ -6,58 +6,8 @@ from flask import request, jsonify
 from flask_cors import CORS, cross_origin
 from flask import render_template
 import creds
+from stack import Stack
 
-class Stack:
-    def _data_validate(self):
-        self._stack['size']=len(self._stack['data'])
-
-    def __init__(self,elements=[], filename="nil" ):
-        self._stack={}
-        self._stack['size']=[]
-        self._stack['data']=elements
-        self._stack['size']=len(elements)
-    
-    def pop(self):
-        if not self._stack['size']:
-            raise Exception("stack Exausted")
-        temp=self._stack['data'][self._stack['size']-1]
-        del self._stack['data'][self._stack['size']-1]
-        self._stack['size']=len(self._stack['data'])
-        
-        return temp
-
-    def empty_stack(self):
-        self._stack["data"]=[]
-        self._data_validate()
-
-    def push(self,newElement=""):
-        self._stack['data'].append(newElement)
-        self._stack['size']=len(self._stack['data'])
-        return 0
-
-    def is_empty(self):
-        if self._stack['size']:
-            return 0
-        else:
-            return 1 
-    
-    def size(self):
-            temp=self._stack['size']
-            return temp
-    
-    def top(self):
-        if not self._stack['size']:
-            raise Exception("stack empty")
-        return self._stack['data'][self._stack['size']-1]
-
-    def stack(self):
-        temp=self._stack['data']
-        return temp 
-
-    def raw_stack(self):
-        temp=self._stack
-        return temp
-   
 def get_stack_from_db():
     stackdb=mongo.db.stack.find({"name" :"stack0"})[0]
     stack._stack['data'] = stackdb['data']
@@ -75,7 +25,6 @@ def dbupdate():
         mongo.db.stack.update_one({"name":"stack0"},temp)
     except: 
         return "Internal Server Error With DB", 500
-    get_stack_from_db()    
     return "DB UPDATE OK",200
 
 #  APP CONFIG 
@@ -94,6 +43,7 @@ def index():
 
 @app.route('/stack',methods=['GET'])
 def view_stack():
+    get_stack_from_db()
     return json.dumps(stack.raw_stack()),200
 
 @app.route('/pop',methods=['GET'])

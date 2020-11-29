@@ -103,9 +103,9 @@ def pop():
         dbupdate()
     except: 
         return "Internal Server Error With DB", 500
-    return "POP OK",200
+    return {"POP":"OK"},200
 
-@app.route('/push',methods=['POST','GET'])
+@app.route('/push',methods=['GET'])
 def push():
     if 'data' not in request.args:
         return "Bad Request Please Pass the data in the Quary Parameters",400
@@ -114,7 +114,7 @@ def push():
         dbupdate()
     except: 
         return "Internal Server Error With DB", 500
-    return "PUSH OK",200
+    return {"PUSH":" OK"},200
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')

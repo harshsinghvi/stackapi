@@ -2,7 +2,7 @@
 
 Stack Implementation Using API in Python.
 
-## Latest Production Version [https://stackapi.vercel.app](https://stackapi.vercel.app)
+## Check out Latest Production Version [https://stackapi.vercel.app](https://stackapi.vercel.app) (Using Serverless Functions and MongoDB).
 
 By the time try this [https://stackapi-app.herokuapp.com/](https://stackapi-app.herokuapp.com/) (Old with some Bugs).
 

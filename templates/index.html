@@ -47,6 +47,7 @@
         var data = await response.json();
         setTimeout(1500);
         document.getElementById("result").innerHTML= JSON.stringify(data) + " " + response.status;
+        document.getElementById("push_data").value = "";
         console.log(data);
         main();
     }

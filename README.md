@@ -1,6 +1,4 @@
-[<center><h1 style="color:green;font-size: 500%;">StackApi</h1></center>](https://stackapi.projects.harshsinghvi.com/)
-
-# StackAPI
+# [StackAPI](https://stackapi.projects.harshsinghvi.com/)
 
 Stack Implementation Using API in Python.
 

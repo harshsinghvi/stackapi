@@ -29,7 +29,7 @@ Stack Implementation Using API in Python.
 | `/`             | `None`         | Html         | Web App to visualize StackAPI.     |
 | `GET /stack`    | `None`         | Json         | Get complete stack in Json format. |
 | `GET /pop`      | `None`         | Json         | POP the element in the Stack.      |
-| `GET /push`     | `data`         | Json         | PUSH an element in the stack (`/push?data=<element>`). |
+| `GET /push`     | `data`         | Json         | PUSH an element in the Stack (`/push?data=<element>`). |
 
 ## ✨ Features
 

@@ -4,6 +4,16 @@ Stack Implementation Using API in Python.
 
 > Stack is a linear data structure which follows a particular order in which the operations are performed. The order may be LIFO(Last In First Out) or FILO(First In Last Out). There are many real-life examples of a stack. Consider an example of plates stacked over one another in the canteen.
 
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](hhttps://github.com/harshsinghvi/stackapi)
+[![PyPI license](https://img.shields.io/pypi/l/ansicolortags.svg)](https://github.com/harshsinghvi/stackapi/blob/master/LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/harshsinghvi/stackapi)
+[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/harshsinghvi/)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/harshsinghvi/UniversalGPIO/graphs/commit-activity)
+
+[![GitHub forks](https://img.shields.io/github/forks/harshsinghvi/UniversalGPIO.svg?style=social&label=Fork&maxAge=2592000)](https://GitHub.com/harshsinghvi/stackapi/network/)
+[![GitHub stars](https://img.shields.io/github/stars/harshsinghvi/UniversalGPIO.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/harshsinghvi/stackapi/stargazers/)
+[![GitHub watchers](https://img.shields.io/github/watchers/harshsinghvi/UniversalGPIO.svg?style=social&label=Watch&maxAge=2592000)](https://GitHub.com/Naereen/harshsinghvi/stackapi/watchers/)
+
 ## 🚀 Deployments
 
 * **Production Build** [https://stackapi.vercel.app](https://stackapi.vercel.app)

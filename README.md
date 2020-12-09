@@ -21,6 +21,12 @@ Stack Implementation Using API in Python.
 | `GET /pop`      | `None`         | Json         | POP the element in the Stack       |
 | `GET /push`     | `data`         | Json         | PUSH an element in the stack (`/push?data=<element>`). |
 
+## ✨ Features
+
+* Serverless
+* Made Using JAM Stack
+* Static Web UI
+
 ## 👾 Contributors
 
 ### 👨‍💻[Harsh Singhvi](https://harshsinghvi.com)

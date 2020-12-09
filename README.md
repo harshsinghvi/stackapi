@@ -4,7 +4,7 @@ Stack Implementation Using API in Python.
 
 > Stack is a linear data structure which follows a particular order in which the operations are performed. The order may be LIFO(Last In First Out) or FILO(First In Last Out). There are many real-life examples of a stack. Consider an example of plates stacked over one another in the canteen.
 
-## 🌐 Deployments
+## 🚀 Deployments
 
 * **Production Build** [https://stackapi.vercel.app](https://stackapi.vercel.app)
 
